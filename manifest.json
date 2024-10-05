@@ -1,0 +1,38 @@
+{
+  "name": "PTE",
+  "version": "6.9",
+  "description": "",
+  "manifest_version": 2,
+  "icons": {
+    "1024": "./favicon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "1024": "./favicon.png"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pony.town/*"
+      ],
+      "js": [
+        "./code.js",
+        "./inject.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "cookie",
+    "scripting",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "tabs"
+  ]
+}
