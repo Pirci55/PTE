@@ -1,7 +1,7 @@
 {
-  "name": "PTE",
+  "name": "PTE pro",
   "version": "6.9",
-  "description": "",
+  "description": "Версия для самых маленьких",
   "manifest_version": 2,
   "icons": {
     "1024": "./favicon.png"
@@ -15,11 +15,11 @@
   "content_scripts": [
     {
       "matches": [
-        "https://pony.town/*"
+        "https://pony.town/*",
+        "https://ru.wikipedia.org/*"
       ],
       "js": [
-        "./code.js",
-        "./inject.js"
+        "./code.js"
       ],
       "all_frames": true,
       "run_at": "document_start"
